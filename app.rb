@@ -24,7 +24,6 @@ end
 
 get '/raw-req/:id' do
   @req = Request.find(params[:id])
-  p @req
   @ip = @req.remote_addr
   @record = whois.lookup(@ip)
   haml :show, format: :html5
