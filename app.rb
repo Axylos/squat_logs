@@ -1,10 +1,11 @@
 require 'sinatra'
-require 'byebug'
 require 'whois'
 require 'whois-parser'
 require 'haml'
 require 'sinatra/reloader' if development?
 
+set :port, 8080 unless development?
+set :domain, 'http://draketalley.com/squat_logs'
 require './models'
 whois = Whois::Client.new
 
