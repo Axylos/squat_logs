@@ -1,0 +1,4 @@
+%div.index
+  - @reqs.each do |req| 
+    .request
+      = haml :summary, locals: { req: req }

@@ -1,0 +1,11 @@
+%div 
+  %h3 Host
+  %p= req.host
+  %h3 Remote Address
+  %p= req.remote_addr
+  %h3 Access Time
+  %p= format_time(req.created_at) 
+  %h3 URL
+  %div= req.url.length > 20 ? req.url[0..20] + "..." : req.url
+  %a{ href: url("/raw-req/#{req.id}")}
+    %button Raw Request
