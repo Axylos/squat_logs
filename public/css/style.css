@@ -3,6 +3,23 @@ body {
   background: #363636;
 }
 
+nav {
+  animation: 3s linear 0s infinite alternate nav;
+}
+
+@keyframes nav {
+  from { margin-left: -20%; }
+  to { margin-left: 500px; }
+}
+.request:nth-of-type(even) {
+  animation: 1s linear 0s infinite alternate bg;
+}
+
+@keyframes bg {
+  from { filter: saturate(100%) invert(0); }
+  to { filter: saturate(100) invert(150); }
+}
+
 h3 { margin: 8px 0 0 0; }
 
 #content {
@@ -11,10 +28,21 @@ h3 { margin: 8px 0 0 0; }
   flex-direction: column;
   justify-content: center;
 }
+
 .code {
   white-space: pre-wrap;
   line-height: 20px;
   overflow-wrap: break-word;
+}
+
+.request:nth-of-type(odd) {
+  animation: 2s linear 0s infinite alternate awful;
+  filter: invert(200);
+}
+
+@keyframes awful {
+  from { filter: invert(0); }
+  to { filter: invert(200) saturate(100); }
 }
 
 .dumps {
@@ -83,3 +111,4 @@ nav a:hover {
   font-style: italic;
   cursor: pointer;
 }
+

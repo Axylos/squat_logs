@@ -3,7 +3,12 @@ require 'whois'
 require 'whois-parser'
 require 'haml'
 require 'sinatra/reloader' if development?
+require "pg"
+require "active_record"
+require './models'
 
+
+ActiveRecord::Base.establish_connection("postgres://postgres@192.168.1.176/squat_db")
 set :port, 8080 unless development?
 set :domain, 'http://draketalley.com/squat_logs'
 require './models'
@@ -15,6 +20,9 @@ def format_time(time)
   t.strftime("%b %d %Y:  %I:%M %p")
 end
 
+after do
+  ActiveRecord::Base.clear_active_connections!
+end
 get '/' do
   haml :welcome, format: :html5
 end

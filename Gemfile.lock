@@ -24,6 +24,7 @@ GEM
     multi_json (1.13.1)
     mustermann (1.0.3)
     pg (1.1.4)
+    puma (3.12.1)
     rack (2.0.6)
     rack-protection (2.0.5)
       rack
@@ -56,10 +57,11 @@ DEPENDENCIES
   activerecord
   haml
   pg
+  puma
   sinatra
   sinatra-contrib
   whois
   whois-parser
 
 BUNDLED WITH
-   1.16.1
+   1.16.4
