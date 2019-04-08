@@ -84,7 +84,7 @@ button:focus {
 
 .request {
   width: 220px;
-  padding: 10px;
+  font-size: 20px;
   padding: 15px;
   margin: 10px;
   color: #0E34A0;
